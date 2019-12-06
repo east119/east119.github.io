@@ -70,6 +70,11 @@
         }
     </script>
     <style type="text/css">
+	    	body{
+    		    display: block;
+    		    margin: 0;
+    		    padding: 0 5rem 5rem 5rem;
+	    	}
         pre
         {
             cursor: pointer;
@@ -91,14 +96,11 @@
     </style>
 </head>
 <body style="">
-    <h1>
-        linq.js Reference</h1>
+    <h1>linq.js Reference</h1>
     <p>
-        <a href="http://neue.cc/">http://neue.cc/</a><br>
-        <a href="http://linqjs.codeplex.com/">http://linqjs.codeplex.com/</a>
+        <a href="https://github.com/mihaifm/linq">LINQ for JavaScript</a><br> 
     </p>
-    <h2>
-        LINQ Pad</h2>
+    <h2>LINQ Pad</h2>
     <table>
         <tbody><tr>
             <td style="width: 50%; vertical-align: top">
@@ -112,8 +114,7 @@
             </td>
         </tr>
     </tbody></table>
-    <h2 class="clear:both">
-        Generating Methods</h2>
+    <h2 class="clear:both">Generating Methods</h2>
     <table>
         <thead>
             <tr>
@@ -492,8 +493,7 @@ Enumerable.From(node).Select("$.innerHTML")</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Projection and Filtering Methods</h2>
+    <h2>Projection and Filtering Methods</h2>
     <table>
         <thead>
             <tr>
@@ -767,8 +767,7 @@ Enumerable.From([new ClassA("a"),1,2,new ClassA("b")])
             </tr>
         </tbody>
     </table>
-    <h2>
-        Join Methods</h2>
+    <h2>Join Methods</h2>
     <table>
         <thead>
             <tr>
@@ -847,8 +846,7 @@ Enumerable.From(array1)
             </tr>
         </tbody>
     </table>
-    <h2>
-        Set Methods</h2>
+    <h2>Set Methods</h2>
     <table>
         <thead>
             <tr>
@@ -1115,8 +1113,7 @@ seq1.Union(seq2,"$.test").Select("$.test")</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Ordering Methods</h2>
+    <h2>Ordering Methods</h2>
     <table>
         <thead>
             <tr>
@@ -1257,8 +1254,7 @@ Enumerable.From(list).OrderBy("$.a").ThenByDescending("$.c").ThenByDescending("$
             </tr>
         </tbody>
     </table>
-    <h2>
-        Grouping Methods</h2>
+    <h2>Grouping Methods</h2>
     <table>
         <thead>
             <tr>
@@ -1383,8 +1379,7 @@ Enumerable.From(list).OrderBy("$.a").ThenByDescending("$.c").ThenByDescending("$
             </tr>
         </tbody>
     </table>
-    <h2>
-        Aggregate Methods</h2>
+    <h2>Aggregate Methods</h2>
     <table>
         <thead>
             <tr>
@@ -1579,8 +1574,7 @@ Enumerable.From(list).OrderBy("$.a").ThenByDescending("$.c").ThenByDescending("$
             </tr>
         </tbody>
     </table>
-    <h2>
-        Paging Methods</h2>
+    <h2>Paging Methods</h2>
     <table>
         <thead>
             <tr>
@@ -1899,8 +1893,7 @@ Enumerable.From(list).OrderBy("$.a").ThenByDescending("$.c").ThenByDescending("$
             </tr>
         </tbody>
     </table>
-    <h2>
-        Convert Methods</h2>
+    <h2>Convert Methods</h2>
     <table>
         <thead>
             <tr>
@@ -2075,8 +2068,7 @@ Enumerable.From([{Foo:1, Bar:'z'},{Foo:5, Bar:null}]).ToJSON()</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Action Methods</h2>
+    <h2>Action Methods</h2>
     <table>
         <thead>
             <tr>
@@ -2241,8 +2233,7 @@ Enumerable.From([{Foo:1, Bar:'z'},{Foo:5, Bar:null}]).ToJSON()</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Functional Methods</h2>
+    <h2>Functional Methods</h2>
     <table>
         <thead>
             <tr>
@@ -2312,8 +2303,7 @@ mem.Where("$%2==0")</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Error Handling Methods</h2>
+    <h2>Error Handling Methods</h2>
     <table>
         <thead>
             <tr>
@@ -2364,8 +2354,7 @@ mem.Where("$%2==0")</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        For Debug Methods</h2>
+    <h2>For Debug Methods</h2>
     <table>
         <thead>
             <tr>
@@ -2418,8 +2407,7 @@ Enumerable.Range(1,10).Trace().Force()</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        IEnumerator</h2>
+    <h2>IEnumerator</h2>
     <table>
         <thead>
             <tr>
@@ -2496,8 +2484,7 @@ Enumerable.Range(1,10).Trace().Force()</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Dictionary</h2>
+    <h2>Dictionary</h2>
     <table>
         <thead>
             <tr>
@@ -2632,8 +2619,7 @@ dict.ToEnumerable().Select("$.Key + ':' + $.Value")</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Lookup</h2>
+    <h2>Lookup</h2>
     <table>
         <thead>
             <tr>
@@ -2714,8 +2700,7 @@ dict.ToEnumerable().Select("$.Key + ':' + $.Value")</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        Grouping(inherit Eunmerable)</h2>
+    <h2>Grouping(inherit Eunmerable)</h2>
     <table>
         <thead>
             <tr>
@@ -2766,8 +2751,7 @@ grouping.Where("$.x % 10 == 0").Select("$.id + ':' + $.x")</pre>
             </tr>
         </thead>
     </table>
-    <h2>
-        jQuery plugin</h2>
+    <h2>jQuery plugin</h2>
     <table>
         <thead>
             <tr>
@@ -2816,8 +2800,7 @@ grouping.Where("$.x % 10 == 0").Select("$.id + ':' + $.x")</pre>
             </tr>
         </tbody>
     </table>
-    <h2>
-        RxJS Binding</h2>
+    <h2>RxJS Binding</h2>
     <table>
         <thead>
             <tr>
