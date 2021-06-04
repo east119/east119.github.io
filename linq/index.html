@@ -1,44 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0028)http://neue.cc/reference.htm -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>linq.js Reference</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
     <script type="text/javascript" src="./linq.min.js"></script>
     <script type="text/javascript">
         var textStack = []
-        document.write = function ()
-        {
+        document.write = function () {
             Enumerable.From(arguments).ForEach("textStack.push($)");
         }
 
-        function evaluate(code)
-        {
+        function evaluate(code) {
             textStack.length = 0;
             var value;
-            try
-            {
+            try {
                 eval(code + '.Take(1001).WriteLine()');
                 value = textStack.join("");
-            } catch (e)
-            {
+            } catch (e) {
                 textStack.length = 0;
-                try
-                {
+                try {
                     value = eval("(" + code + ")");
                     document.write(value);
                     value = textStack.join("");
                 }
-                catch (e2)
-                {
+                catch (e2) {
                     value = "error";
                 }
             }
             return value;
         }
 
-        function expand()
-        {
+        function expand() {
             var code = (this.innerText || this.textContent);
             var value = evaluate(code);
             var p = document.createElement("p");
@@ -47,20 +43,17 @@
             this.onclick = collapse;
         }
 
-        function collapse()
-        {
+        function collapse() {
             this.removeChild(this.lastChild);
             this.onclick = expand;
         }
 
-        function execute()
-        {
+        function execute() {
             var value = evaluate(this.value);
             document.getElementById("codeResult").innerHTML = value;
         }
 
-        window.onload = function ()
-        {
+        window.onload = function () {
             Enumerable.From(document.getElementsByTagName("pre"))
                 .ForEach("$.onclick = expand");
 
@@ -70,50 +63,53 @@
         }
     </script>
     <style type="text/css">
-	    	body{
-    		    display: block;
-    		    margin: 0;
-    		    padding: 0 5rem 5rem 5rem;
-	    	}
-        pre
-        {
+        body {
+            display: block;
+            margin: 0;
+            padding: 0 5rem 5rem 5rem;
+        }
+
+        pre {
             cursor: pointer;
         }
-        table
-        {
+
+        table {
             width: 100%;
             border-collapse: collapse;
         }
-        td
-        {
+
+        td {
             border: solid black;
             border-width: 1px 0 1px 0;
         }
-        h2
-        {
+
+        h2 {
             width: 100%;
         }
     </style>
 </head>
+
 <body style="">
     <h1>linq.js Reference</h1>
     <p>
-        <a href="https://github.com/mihaifm/linq">LINQ for JavaScript</a><br> 
+        <a href="https://github.com/mihaifm/linq">LINQ for JavaScript</a><br>
     </p>
     <h2>LINQ Pad</h2>
     <table>
-        <tbody><tr>
-            <td style="width: 50%; vertical-align: top">
-                <textarea cols="10" rows="10" id="codeInput" style="width: 100%">Enumerable.Range(0, 20)
+        <tbody>
+            <tr>
+                <td style="width: 50%; vertical-align: top">
+                    <textarea cols="10" rows="10" id="codeInput" style="width: 100%">Enumerable.Range(0, 20)
 .Where("$ % 3 == 0")
 .Select("value, index =&gt; {index:index, value:value * 10}")
 .WriteLine("$.index + ':' + $.value")</textarea>
-            </td>
-            <td style="vertical-align: top">
-                <p id="codeResult" style="padding-left: 20px">0:0<br>1:30<br>2:60<br>3:90<br></p>
-            </td>
-        </tr>
-    </tbody></table>
+                </td>
+                <td style="vertical-align: top">
+                    <p id="codeResult" style="padding-left: 20px">0:0<br>1:30<br>2:60<br>3:90<br></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <h2 class="clear:both">Generating Methods</h2>
     <table>
         <thead>
@@ -2851,4 +2847,6 @@ grouping.Where("$.x % 10 == 0").Select("$.id + ':' + $.x")</pre>
     </table>
 
 
-</body></html>
+</body>
+
+</html>
